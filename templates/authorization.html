@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block css %} ../static/styles/style1.css {% endblock%}
+
+
+{% block cont %}
+<h1 style="text-align: center; margin-top: 40px;">ავტორიზაცია</h1>
+<div class="container">
+  <div class="row">
+    {% for errors in form.errors.values() %}
+    <div class="alert alert-danger"> 
+      {% for error in errors %}
+        *{{ error }}<br>
+      {% endfor %}
+    </div>
+    {% endfor %}
+    </div>
+    
+  <form method="post" enctype="multipart/form-data" class="col p-5">    
+    {{ form.hidden_tag() }}
+    <div class="row mt-2">
+      {{ form.name(class="form-control", placeholder=form.name.label.text)}}
+    </div>
+    <div class="row mt-2">
+      {{ form.passcode(class="form-control", placeholder=form.passcode.label.text) }}
+    </div>
+    <div class="row mt-2">
+      {{ form.repeat_passcode(class="form-control", placeholder=form.repeat_passcode.label.text) }}
+    </div>
+    <div style="display: flex; justify-content: center;" class="row mt-4">
+      {{ form.submit1(class="btn btn-primary", style="width: 300px;") }}
+    </div>
+  </form>
+</div>
+
+{% endblock %}

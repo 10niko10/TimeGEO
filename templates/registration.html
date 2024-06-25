@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block css %} ../static/styles/style2.css {% endblock%}
+
+
+{% block cont %}
+<h1 style="text-align: center;">რეგისტრაცია</h1>
+<div class="container">
+  <div class="row">
+    {% for errors in form.errors.values() %}
+    <div class="alert alert-danger">
+      {% for error in errors %}
+        *{{ error }}<br>
+      {% endfor %}
+    </div>
+    {% endfor %}
+    </div>
+    <div class="row">
+      {% set messages = get_flashed_messages()%}
+      
+        {% for message in messages %}
+        <div class="alert alert-danger">
+          * {{ message }} 
+        </div>
+        {% endfor %}
+    </div>
+
+  <form method="post" enctype="multipart/form-data" class="col p-5">    
+    {{ form.hidden_tag() }}
+    <div class="row">
+      {{ form.profile_img.label.text }}: {{ form.profile_img(accept=".jpg,.png") }}
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 10px;" class="row mt-2">
+      {{ form.username(class="form-control", placeholder=form.username.label.text,  style= "width: 48%;")}}
+      {{ form.email(class="form-control", placeholder=form.email.label.text, style= "width: 48%;")}}
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 10px;" class="row mt-2">
+      {{ form.password(class="form-control", placeholder=form.password.label.text,  style= "width: 48%;") }}
+      {{ form.repeat_password(class="form-control", placeholder=form.repeat_password.label.text,  style= "width: 48%;") }}
+    </div>
+    <div class="row mt-2 g-0">
+      <div class="col-1">
+        {{ form.region_number(class="form-control rounded-0") }}
+      </div>
+      <div class="col">
+        {{ form.phone_number(class="form-control rounded-0", placeholder=form.phone_number.label.text) }}
+      </div>
+      
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 10px;" class="row mt-2">
+      {{ form.birthday(class="form-control",  style= "width: 48%;") }}
+      {{ form.country(class="form-select",  style= "width: 48%;") }}
+    </div>
+    <div style="display: flex; justify-content: center;" class="row mt-2">
+      {{ form.gender.label }}
+      {{ form.gender }}
+    </div>
+
+
+    <div style="display: flex; justify-content: center;" class="row mt-3">
+      {{ form.submit(class="btn btn-primary",  style= "width: 300px;") }}
+    </div>
+  </form>
+</div>
+
+{% endblock %}

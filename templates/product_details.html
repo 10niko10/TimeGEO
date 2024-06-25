@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block css %} ../static/styles/styled.css {% endblock%}
+
+
+{% block cont %}
+
+<h1 style="text-align: center;">„სიზუსტე და ელეგანტურობა თქვენს ხელთაა“</h1>
+<div class="contii">
+<img style="width: 600px; height: 500px;" src="/static/images/{{ product['img'] }}" alt="">
+<div class="texti">
+<p>სახელი: {{ product['name' ]}}</p>
+<p>ფასი: {{ product['price'] }} ₾</p>
+</div>
+</div>
+
+{% endblock %}
+

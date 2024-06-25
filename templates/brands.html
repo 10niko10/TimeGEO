@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block css %} ../static/styles/stylew.css {% endblock %}
+
+{% block cont %}
+<div style="padding: 0 40px;">
+    <h1 style="text-align: center;">ბრენდები</h1>
+
+    <section class="casio">
+        <h4>Casio</h4>
+        <p>”ეს საათი საოცრებაა. შემიძლია ვითამაშო ჰოკეი, ვისეირნო, დავიძინო, შხაპი მივიღო, ვირბინო, ვიმუშავო ... ყველაფერი გავაკეთო ამ საათთან ერთად და ის ისევ ახალს ჰგავს. როდესაც ადამიანები კომენტარს აკეთებენ სტილზე, მე უბრალოდ ვიღიმი, რადგან სიმარტივე და მინიმალისტური ელემენტები ჩემთვის ყველაფერს ნიშნავს. გულწრფელად გითხრათ, ეს საუკეთესო ფასეულობაა, რომელიც დღეს მაჯაზე შეგიძლიათ დაიმაგროთ - ის არ დაგიმძიმებთ თუნდაც ყველაზე რთულ პირობებში ”. - Casio-ს მომხმარებლის კომენტარი.
+<br>
+<br>
+            Casio ყველაზე გამძლე და საიმედო საათებს აწარმოებს 1946 წლიდან. ბრენდის დამფუძნებელი ინჟინერი ოცნებობდა ელექტრონული მოწყობილობების რევოლუციური ბრენდის შექმნაზე და მან ეს გააკეთა.
+<br>            
+<br>            
+            Casio აწარმოებს სხვადასხვა ელექტრონულ მოწყობილობებს (კალკულატორები, ციფრული კამერები, პრინტერები,მობილური მოწყობილობები), თუმცა მათ შორის ყველაზე პოპულარული მაინც საათებია.
+  <br>          
+  <br>          
+            ბრენდი აწარმოებს   სხვადასხვა ზომის, ფერის და სტილის საათებს.
+  <br>          
+  <br>          
+            Casio-ს საათები დამზადებულია გამძლე მასალებისგან, რომლებიც უზრუნველყოფენ საათებს ისეთი მახასიათებლებით, როგორიცაა შოკისადმი გამძლეობა და წყლის წნევის წინააღმდეგობა. „ჩვენ ვაფასებთ კრეატიულობას და ვთვლით რომ ჩვენი პროდუქტები დააკმაყოფილებს ყველა მომხმარებლის საჭიროებებს” - ეს გახლავთ კასიოს სლოგანი დაარსებიდან დღემდე.</p>
+        <div style=" display: flex; justify-content: center;" class="row">
+            {% for watch in watches %}
+                {% if watch.title == "Casio" %}
+                <div class="col mb-4">
+                    <div class="card" style="width: 18rem; height: 30rem">
+                        <img style="height: 60%;" src="{{ watch.img }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ watch.title }}</h5>
+                            <p class="card-text">{{ watch.name }}</p>
+                            <p class="card-text">{{ watch.price }} ₾</p>
+                            <a href="{{ url_for('watch', watch_id=watch.id) }}" class="btn btn-primary">დეტალები</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <hr>
+    <section class="citizen">
+        <h4>Citizen</h4>
+        <p>CITIZEN-ი ერთ-ერთი ყველაზე წარმატებული ბრენდია საათებისა და ინოვაციური ტექნოლოგიების შექმნაში. იგი დაარსებიდან 100 წლის შემდეგაც განსაკუთრებულ მნიშვნელობას ანიჭებს სრულყოფილებას და მესაათეების ხელით შექმნილ კრეატიულობას.
+<br>
+<br>
+            ბრენდი მხარს უჭერს მსოფლიოში არსებულ პოზიტიურ ცვლილებებს და მიმდინარე ევოლუციას. 40 წელზე მეტია CITIZEN- ის Eco-Drive ტექნოლოგია წარმოადგენს მაგალითს თუ როგორ ეხმარება ბრენდი მსოფლიოს, რომ ის საცხოვრებლად უკეთესი ადგილი გახდეს.
+  <br>          
+  <br>          
+            CITIZEN-ის საათები განკუთვნილია მამაკაცებისთვის, რომლებიც უპირატესობას ანიჭებენ სპორტულ სტილს. ეკო ტექნოლოგიით დამზადებულს საათებს არ სჭირდებათ ელემენტები.
+      <br>      
+      <br>      
+            Citizen Eco-Drive- ის ხაზი ქალბატონებისთვის გამოირჩევა ელეგანტურობით. მის ციფერბლატზე განთავსებულია შავი არაბული ციფრები და აქვს თარიღის აღმნიშვნელი მაჩვენებელი, რაც განსაკუთრებულ სილამაზეს ჰმატებს თქვენს სამკაულების კოლექციას.
+          <br>  
+          <br>  
+            Citizen-ის ფოლადით დამზადებულ მოდელებს დამატებით აქვთ 26 მმ-იანი სარტყელი და ისინი წყალგაუმტარობას ინარჩუნებენ 100 მეტრ სიღრმეზე. Citizen Eco-Drive-ს საათები იტენება ნებისმიერი ტიპის განათებით და არასდროს სჭირდებათ ელემენტი.
+          <br>  
+          <br>  
+            Citizen-ის კიდევ ერთი ცნობილი საათების ხაზია Promaster-ი, რომელიც 30 წლის წინ შეიქმნა. ამ თარიღთან დაკავშირებით გამოუშვეს Promaster Skyhawk A-T მოდელი, რომლის შთაგონებაც გახლდათ სამხედრო მფრინავთა ელიტური ქვედანაყოფი „ლურჯი ანგელოზები“. 
+            </p>
+        <div style="padding: 0 100px; display: flex; justify-content: center; gap: 50px;" class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            {% for watch in watches %}
+                {% if watch.title == "Citizen" %}
+                <div class="col mb-4">
+                    <div class="card" style="width: 18rem; height: 30rem">
+                        <img style="height: 60%;" src="{{ watch.img }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ watch.title }}</h5>
+                            <p class="card-text">{{ watch.name }}</p>
+                            <p class="card-text">{{ watch.price }} ₾</p>
+                            <a href="{{ url_for('watch', watch_id=watch.id) }}" class="btn btn-primary">დეტალები</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="pandora">
+        <h4>PANDORA</h4>
+        <p>PANDORA ერთ-ერთი ყველაზე წარმატებული საიუველირო ბრენდია, რომელიც ერთნაირად ცნობილი და პოპულარულია ყველა კონტინენტზე. ბრენდი წარმოდგენილია 100-ზე მეტ ქვეყანაში.
+            ახალგაზრდა იუველირმა პერ ენევოლდენსმა და მისმა მეუღლემ ვინიმ, პატარა მაღაზია კოპენჰაგენის ცენტრში 1982 წელს გახსნეს. მაღაზიის ზომა მხოლოდ 30 კვადრატულ მეტრს შეადგენდა და მასში წარმოდგენილი იყო ორიგინალური, ხელნაკეთი სამკაულები. წყვილი ხშირად მოგზაურობდა ტაილანდში, განსხვავებული სამკაულების საძიებლად. მათ შეძენილი ნივთები გასაყიდად ჩამოჰონდათ. თანდათან იზრდებოდა მოთხოვნა მათ სამკაულებზე.
+            PANDORA- ს მისია იყო და რჩება - ქალბატონებს შესთავაზოს თანამედროვე და მაღალი ხარისხის ხელნაკეთი სამკაულების უნიკალური არჩევანი ხელმისაწვდომ ფასებში, მთელი მსოფლიოს მასშტაბით.
+            თითოეულ ქალს აქვს საკუთარი უნიკალური ისტორია და განსაკუთრებული მომენტების პერსონალური კოლექცია. სწორედ ამიტომ, ჩვენ ვიმახსოვრებთ ამ წუთებს და მათ დაუვიწყარს ვუწოდებთ, პანდორას ისტორიის მსგავსად.</p>
+        <div style="padding: 0 100px; display: flex; justify-content: center; gap: 50px;" class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            {% for watch in watches %}
+                {% if watch.title == "PANDORA" %}
+                <div class="col mb-4">
+                    <div class="card" style="width: 18rem; height: 30rem">
+                        <img style="height: 60%;" src="{{ watch.img }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ watch.title }}</h5>
+                            <p class="card-text">{{ watch.name }}</p>
+                            <p class="card-text">{{ watch.price }} ₾</p>
+                            <a href="{{ url_for('watch', watch_id=watch.id) }}" class="btn btn-primary">დეტალები</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    <hr>
+
+    <section class="tous">
+        <h4>TOUS</h4>
+        <p>TOUS 1920 წელს დაარსებული ესპანური ბრენდია, რომელიც სამკაულების, ჩანთების, აქსესუარებისა და სუნამოების კოლექციებს აერთიანებს.
+<br>
+<br>
+            ბრენდს მისმა ნიშურმა დიზაინმა და გამორჩეულმა ხარისხმა, მსოფლიო აღიარება მალევე მოუტანა და მოდის ენთუზიასტების დამსახურებული ინტერესეიც მიიპყრო.
+     <br>       
+     <br>       
+            პირველად საქართველოში, ცნობილი ესპანური ბრენდის კონცეპტ მაღაზია უკვე ოფიციალურად გახსნილია, აქ კი მათი ექსკლუზიური კოლექციების გაცნობას შეძლებთ.</p>
+        <div style="padding: 0 100px; display: flex; justify-content: center; gap: 50px;" class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            {% for watch in watches %}
+                {% if watch.title == "TOUS" %}
+                <div class="col mb-4">
+                    <div class="card" style="width: 18rem; height: 30rem">
+                        <img style="height: 60%;" src="{{ watch.img }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ watch.title }}</h5>
+                            <p class="card-text">{{ watch.name }}</p>
+                            <p class="card-text">{{ watch.price }} ₾</p>
+                            <a href="{{ url_for('watch', watch_id=watch.id) }}" class="btn btn-primary">დეტალები</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="edox">
+        <h4>EDOX</h4>
+        <p>Edox - საათი, სადაც ელეგანტურობა და სიზუსტე ერთმანეთს ერწყმის.
+<br>
+<br>
+            Edox-ის შვეიცარიული ოსტატობის მწვერვალს 1884 წლიდან იპყრობს. დახვეწილი დეტალები და ინოვაციური მიდგომა, საათის თითოეულ ნაწილს ფუფუნების საგნად წარმოაჩენს. მათი საათების შესწავლისას, მარადიული სტილის და ისტორიული შვეიცარიული გამოცდილების არაჩვეულებრივ სინთეზს იხილავთ. სწორედ ამიტომ, Edox-ის საათის ტარება, დახვეწილობის განაცხადია.
+<br>            
+<br>            
+            თაიმი მოხარულია, რომ პირველად საქართველოში, ორსაუკოვანი შვეიცარიული ბრენდის ექსკლუზიური წარმომადგენელია და მის მომხმარებლებს გამორჩეულ კოლექციებს შესთავაზებს.  </p>
+        <div style="padding: 0 100px; display: flex; justify-content: center; gap: 50px;" class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            {% for watch in watches %}
+                {% if watch.title == "EDOX" %}
+                <div class="col mb-4">
+                    <div class="card" style="width: 18rem; height: 30rem">
+                        <img style="height: 60%;" src="{{ watch.img }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ watch.title }}</h5>
+                            <p class="card-text">{{ watch.name }}</p>
+                            <p class="card-text">{{ watch.price }} ₾</p>
+                            <a href="{{ url_for('watch', watch_id=watch.id) }}" class="btn btn-primary">დეტალები</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="cluse">
+        <h4>CLUSE</h4>
+        <p>CLUSE-ის საათები და სამკაულები დამზადებულია ამსტერდამში, ჰოლანდიაში. კომპანიას ახალგაზრდა და ამბიციური გუნდი ხელმძღვანელობს. სწორედ ამიტომ, შექმნიდან ძალიან მალე ის მსოფლიოში ერთ-ერთი ყველაზე სწრაფად მზარდი და წარმატებული აქსესუარების ბრენდი გახდა.
+<br>
+<br>
+            ბრენდი დიდ მნიშვნელობას ანიჭებს ყველა პატარა დეტალს. ის თქვენ შთაგაგონებთ გამოხატოთ თქვენი უნიკალურობა თანამედროვე დიზაინის მქონე საათებით, რომლებიც დამზადებულია ყველა პატარა ნიუანსის გათვალისწინებით. ბრენდის მთავარი გამოწვევაა შექმნას ისეთი სამყარო, სადაც ყველაფერი ბრწყინავს.
+         <br>   
+         <br>   
+            TIME-ის მაღაზიებში წარმოდგენილია CLUSE-ის საათების კოლექციის ფართო არჩევანი. სიმარტივე საუკეთესო გამოსავალია. დაიწყეთ კლასიკური ოქროსფერი და ელეგანტური ვერცხლისფერი საათების შეძენით. ამ ბრენდის მოდური საათების კოლექციები თქვენი სტილის განუყოფელი ნაწილი გახდება.
+            <br>
+            <br>
+            CLUSE La Roche- ს ხაზი შესაქმნელად გამოყენებულია ნატურალური მარმარილო. ამ ბუნებრივი ქვის ყოველი ნაჭერი ერთგვარი ხელოვნების ნიმუშია, რაც La Roche-ეს ხაზის თითოეულ პროდუქტს სრულიად უნიკალურს ხდის.</p>
+        <div style="padding: 0 100px; display: flex; justify-content: center; gap: 50px;" class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            {% for watch in watches %}
+                {% if watch.title == "CLUSE" %}
+                <div class="col mb-4">
+                    <div class="card" style="width: 18rem; height: 30rem">
+                        <img style="height: 60%;" src="{{ watch.img }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ watch.title }}</h5>
+                            <p class="card-text">{{ watch.name }}</p>
+                            <p class="card-text">{{ watch.price }} ₾</p>
+                            <a href="{{ url_for('watch', watch_id=watch.id) }}" class="btn btn-primary">დეტალები</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    
+</div>
+{% endblock %}

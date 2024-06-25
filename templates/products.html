@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block css %} ../static/styles/stylew.css {% endblock%}
+
+
+{% block cont %}  
+<div style="text-align: center;" class="con">
+{% if role == "Admin"%}
+    <h5>მოგესამებით Admin!</h5>
+      <a  href="/create_product">პროდუქტის შექმნა</a>
+    {% endif %}
+</div>
+<h2 style="text-align: center;"> EXCLUSIVE პროდუქტები:</h2>
+<div class="container-md">
+<div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+
+{% for product in products %}
+<div class="col">
+<div class="card" style="width: 20rem; height: 30rem;">
+    <img style="height: 60%;" src="/static/images/{{ product['img'] }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ product['name'] }}</h5>
+        <h5 class="card-text">{{ product['price'] }} ₾</h5>
+        <br>
+        <a href="/products/{{ product['id'] }}" class="btn btn-primary">ნახვა</a>
+        
+        {% if current_user.role == "Admin" %}
+          <a href="/delete_product/{{ product['id'] }}" class="btn btn-danger btn-block">პროდუქტის წაშლა</a>
+          <a style="margin-top: 3px;" href="/edit_product/{{ product['id'] }}" class="btn btn-warning btn-block">რედაქტირება</a>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}
