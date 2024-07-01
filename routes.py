@@ -56,11 +56,13 @@ def authorization():
 
 
 @app.route('/products')
+@login_required
 def products():
     products = Product.query.all()
     return render_template('products.html', products=products, role=current_user.role)
 
 @app.route('/products/<int:product_id>')
+@login_required
 def product_detail(product_id):
     product = Product.query.get_or_404(product_id)
     return render_template('product_details.html', product=product)
@@ -81,6 +83,7 @@ def saati():
     return render_template('saati.html', watches=watches)
 
 @app.route("/create_product", methods=["GET", "POST"])
+@login_required
 def create_product():
     form = ProductForm()
     if form.validate_on_submit():
@@ -143,6 +146,7 @@ def edit_product(product_id):
     return render_template("create_products.html", form=form)
 
 @app.route('/delete_watch/<int:watch_id>')
+@login_required
 def delete_watch(watch_id):
     watch = Watch.query.get_or_404(watch_id)
 
