@@ -59,7 +59,7 @@ def authorization():
 @login_required
 def products():
     products = Product.query.all()
-    return render_template('products.html', products=products, role=current_user.role)
+    return render_template('products.html', products=products)
 
 @app.route('/products/<int:product_id>')
 @login_required
